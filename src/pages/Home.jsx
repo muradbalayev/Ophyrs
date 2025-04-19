@@ -37,11 +37,11 @@ const Home = () => {
 
   return (
     <ReactLenis root>
-        <Hero />
+      <Hero />
       <div className="page max-w-[1920px] overflow-hidden mx-auto">
         <AboutSection />
         {/* <StickyCards /> */}
-        <Events />f
+        <Events />
         <ContactSection />
         {/* <Footer /> */}
       </div>

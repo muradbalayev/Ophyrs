@@ -5,6 +5,7 @@ import "./Menu.css";
 import gsap from "gsap";
 
 const Menu = ({ isOpen, setIsOpen, isDark }) => {
+  
   const [isAnimating, setIsAnimating] = useState(false);
   const menuColsRef = useRef([]);
   const menuOverlayRef = useRef(null);
@@ -16,6 +17,9 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const navigationTimeoutRef = useRef(null);
+
+  const isHomePage = location.pathname === "/";
+
 
   useEffect(() => {
     if (navigationTimeoutRef.current) {
@@ -182,7 +186,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
       <div className="menu-bar p-4">
         <div className="">
           <Link
-            className="px-4 py-2 text-white rounded-full"
+            className={`px-4 py-2 rounded-full ${!isHomePage ? 'text-black' : 'text-white'}`}
             to="/"
             onClick={handleNavigation("/")}
           >
@@ -191,7 +195,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
         </div>
 
         <div onClick={handleMenuOpen} className="">
-          <p className="bg-white text-black px-4 py-2 rounded-full">Menu</p>
+          <p className={` px-4 py-2 rounded-full ${!isHomePage ? 'text-white bg-black' : 'text-black bg-white'}`}>Menu</p>
         </div>
       </div>
 

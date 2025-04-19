@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import AdminLayout from "../layout/AdminLayout";
 import AdminInstructorsPage from "../pages/admin/AdminInstructorsPage";
 import TeacherAuth from "../auth/TeacherAuth";
+import Course from "../pages/client/Course";
 
 const RouterApp = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const RouterApp = () => {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="course/:slug" element={<Course/>} />
         </Route>
 
         <Route path="/teacher/auth" element={<TeacherAuth/>} />

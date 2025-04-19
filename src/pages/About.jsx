@@ -321,7 +321,7 @@ const About = () => {
       <section className="py-20 bg-primary-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase text-black">Ready to Transform Your Learning Experience?</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
+          <p className="text-xl mb-8 max-w-3xl mx-auto text-black">
             Join thousands of educators and students who are already using Ophyrs to revolutionize education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

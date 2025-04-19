@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   // Fake data array for courses/events
   const eventsData = [
     {
       id: 1,
+      slug: "phyton",
       image: '/events/python.jpg',
       title: 'Introduction to Python Programming',
       description: 'Learn the fundamentals of Python programming in this interactive course designed for beginners.',
@@ -14,6 +16,7 @@ const Events = () => {
     },
     {
       id: 2,
+      slug: "data-science",
       image: '/events/data-science.jpg',
       title: 'Data Science Fundamentals',
       description: 'Explore the world of data science through practical exercises and real-world applications.',
@@ -23,6 +26,7 @@ const Events = () => {
     },
     {
       id: 3,
+      slug: "ai",
       image: '/events/ai.jpg',
       title: 'Artificial Intelligence Basics',
       description: 'Understand the core concepts of AI and how its transforming industries today.',
@@ -32,6 +36,7 @@ const Events = () => {
     },
     {
       id: 4,
+      slug: "web-development",
       image: '/events/web-dev.jpg',
       title: 'Web Development Bootcamp',
       description: 'A comprehensive course covering HTML, CSS, JavaScript and modern frameworks.',
@@ -41,6 +46,7 @@ const Events = () => {
     },
     {
       id: 5,
+      slug: "cybersecurity",
       image: '/events/cybersecurity.jpg',
       title: 'Cybersecurity Essentials',
       description: 'Learn how to protect systems and networks from digital attacks in this hands-on course.',
@@ -50,6 +56,7 @@ const Events = () => {
     },
     {
       id: 6,
+      slug: "blockchain",
       image: '/events/blockchain.jpg',
       title: 'Blockchain Technology',
       description: 'Discover how blockchain works and its applications beyond cryptocurrency.',
@@ -186,9 +193,9 @@ const Events = () => {
                   </div>
                 </div>
                 
-                <button className="w-full py-2 px-4 border border-primary-600 text-black uppercase text-sm font-medium hover:bg-primary-50 transition duration-300">
+                <Link to={`/course/${event.slug}`} className="w-full py-2 px-4 border border-primary-600 text-black uppercase text-sm font-medium hover:bg-primary-50 transition duration-300">
                   Continue Learning
-                </button>
+                </Link>
               </div>
             </div>
           ))}
