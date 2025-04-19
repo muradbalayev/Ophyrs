@@ -5,6 +5,7 @@ import "./Menu.css";
 import gsap from "gsap";
 import { User } from "lucide-react";
 import Button from "../../components/common/Button";
+import menuImg from '../../assets/menu-img.jpg'
 
 const Menu = ({ isOpen, setIsOpen, isDark }) => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -219,7 +220,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
       <div className="menu-overlay" ref={menuOverlayRef}>
         <div className="menu-col" ref={addToRefs}>
           <div className="menu-bg" ref={menuBgRef}>
-            <img src="/menu/menu-bg-2.jpg" alt="Menu Background" />
+            <img src={menuImg} alt="Menu Background" />
           </div>
           {/* <div className="menu-pattern" ref={menuPatternRef}>
             <img src="/menu/menu-pattern.png" alt="" />

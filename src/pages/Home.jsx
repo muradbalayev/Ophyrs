@@ -5,11 +5,9 @@ import Hero from "../components/Home/Hero";
 import AboutSection from "../components/Home/AboutSection";
 import ContactSection from "../components/Home/ContactSection";
 import Courses from "../components/Home/Courses";
-import Footer from "../layout/Footer/Footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis, { useLenis } from "lenis/react";
 import gsap from "gsap";
-import ParallaxImage from "../components/ParallaxImage/ParallaxImage";
 
 
 const Home = () => {
