@@ -67,7 +67,7 @@ useEffect(() => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto py-8 px-4">
+      <div className="container mx-auto py-20 px-4">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Course Header */}
           <div className="relative h-64 bg-gradient-to-r from-blue-500 to-purple-600">
