@@ -118,7 +118,7 @@
   text-decoration: none;
   text-transform: uppercase;
   color: var(--color-dark);
-  font-size: 30px;
+  font-size: 24apx;
   font-weight: 400;
   cursor: pointer;
 }

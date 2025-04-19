@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../common/Button";
 // import ParallaxImage from "../ParallaxImage/ParallaxImage";
 const Hero = () => {
   return (
@@ -20,12 +21,8 @@ const Hero = () => {
           <p className="text-lg md:text-xl mb-8 ">
           With Ophyrs, teachers organize interactive lessons, and students benefit from this unique experience. Learn physics, biology, and literature in a new and exciting way.          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="cursor-pointer px-6 py-3 bg-primary-600  border rounded-lg hover:bg-primary-700 transition duration-300 uppercase">
-              View Courses
-            </button>
-            <button className="cursor-pointer px-6 py-3 border   rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-300 uppercase">
-              Join as Teacher
-            </button>
+            <Button text="View Courses" href="/" />
+            <Button text="Join as Teacher" href="/teacher/auth" />
           </div>
         </div>
       </div>

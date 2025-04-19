@@ -2,6 +2,7 @@ import React from 'react'
 import Transition from '../components/Transition'
 import { Link } from 'react-router-dom'
 import aboutImg from '../assets/illustrations/Exams-bro.png'
+import Button from '../components/common/Button'
 
 const About = () => {
   return (
@@ -319,17 +320,13 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-20 bg-primary-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase">Ready to Transform Your Learning Experience?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase text-black">Ready to Transform Your Learning Experience?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Join thousands of educators and students who are already using Ophyrs to revolutionize education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/" className="px-8 py-3 bg-white text-primary-600 uppercase font-medium hover:bg-gray-100 transition duration-300">
-              Explore Courses
-            </Link>
-            <Link to="/contact" className="px-8 py-3 border-2 border-white text-white uppercase font-medium hover:bg-white hover:bg-opacity-10 transition duration-300">
-              Contact Us
-            </Link>
+            <Button text="Explore Courses" href="/" />
+            <Button text="Contact Us" href="/contact" />
           </div>
         </div>
       </section>

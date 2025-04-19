@@ -206,7 +206,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
         </div>
         <div className="menu-col" ref={addToRefs}>
           <div
-            className="menu-close px-4 "
+            className="menu-close px-4 py-2"
             ref={menuCloseRef}
             onClick={handleMenuClose}
           >
@@ -238,9 +238,11 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
           </div>
 
           <div className="menu-footer" ref={menuFooterRef}>
-  <p className="primary">Empowering Education. Inspiring Innovation.</p>
-  <p>Building the Future of Learning with Ophyrs</p>
-</div>
+            <p className="primary">
+              Empowering Education. Inspiring Innovation.
+            </p>
+            <p>Building the Future of Learning with Ophyrs</p>
+          </div>
         </div>
       </div>
     </div>
