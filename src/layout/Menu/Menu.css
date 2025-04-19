@@ -183,6 +183,14 @@
     display: none;
   }
 
+  .menu-item{
+    text-align: center;
+  }
+
+  .menu-item p a {
+    font-size: 68px!important;
+  }
+  
   .menu-footer {
     width: 90%;
     text-align: center;
