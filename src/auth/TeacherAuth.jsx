@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Transition from "../components/Transition";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
@@ -13,6 +13,8 @@ const TeacherAuth = () => {
     repeatPassword: "",
     isRemember: false,
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -29,6 +31,8 @@ const TeacherAuth = () => {
         email: formData.email,
         password: formData.password,
       });
+      navigate("/teacher/dashboard");
+
       // Implement login logic here
     } else {
       if (formData.password !== formData.repeatPassword) {
@@ -46,7 +50,7 @@ const TeacherAuth = () => {
         {/* Decorative elements */}
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-100 rounded-full opacity-50 blur-3xl"></div>
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-100 rounded-full opacity-50 blur-3xl"></div>
-        
+
         <div className="relative z-10">
           <div className="text-center">
             <h2 className="mt-6 text-3xl font-bold text-gray-900 uppercase">
@@ -67,7 +71,10 @@ const TeacherAuth = () => {
             <div className="space-y-4">
               {!isLogin && (
                 <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="fullName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Full Name
                   </label>
                   <input
@@ -84,7 +91,10 @@ const TeacherAuth = () => {
               )}
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Email Address
                 </label>
                 <input
@@ -96,25 +106,28 @@ const TeacherAuth = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="mt-1 block w-full border-b-2 border-gray-300 py-2 focus:border-primary-600 focus:outline-none transition-colors"
-                  placeholder="a@example.com"
+                  placeholder="@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Password
                 </label>
                 <div className="relative">
-                <input
-                  id="password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  autoComplete={isLogin ? "current-password" : "new-password"}
-                  required
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="mt-1 block w-full border-b-2 border-gray-300 py-2 focus:border-primary-600 focus:outline-none transition-colors"
-                  placeholder="••••••••"
+                  <input
+                    id="password"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    autoComplete={isLogin ? "current-password" : "new-password"}
+                    required
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border-b-2 border-gray-300 py-2 focus:border-primary-600 focus:outline-none transition-colors"
+                    placeholder="••••••••"
                   />
                   <button
                     type="button"
@@ -128,7 +141,10 @@ const TeacherAuth = () => {
 
               {!isLogin && (
                 <div>
-                  <label htmlFor="repeatPassword" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="repeatPassword"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Repeat Password
                   </label>
                   <input
@@ -155,7 +171,10 @@ const TeacherAuth = () => {
                     onChange={handleChange}
                     className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                   />
-                  <label htmlFor="isRemember" className="ml-2 block text-sm text-gray-700">
+                  <label
+                    htmlFor="isRemember"
+                    className="ml-2 block text-sm text-gray-700"
+                  >
                     Remember me
                   </label>
                 </div>
@@ -174,7 +193,7 @@ const TeacherAuth = () => {
               <div className="inline-block group relative w-full">
                 <button
                   type="submit"
-                  className="cursor-pointer relative z-10 w-full px-8 py-3 bg-white hover border border-primary-600 text-black uppercase font-medium transition-all duration-300 group-hover:px-10 text-center"
+                  className="cursor-pointer relative z-10 w-full px-8 py-3 bg-white hover:bg-black hover:text-white border border-black hover:border-2 transition-all duration-300 group-hover:px-10 text-center"
                 >
                   {isLogin ? "Sign in" : "Sign up"}
                   <span className="absolute h-[2px] w-0 bg-primary-600 bottom-0 left-0 transition-all duration-300 group-hover:w-full"></span>

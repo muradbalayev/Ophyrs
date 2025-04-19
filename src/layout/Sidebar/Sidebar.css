@@ -1,75 +1,222 @@
 :root {
-    --bg-color:  rgb(17 24 39);
-    --card-bg: #efefef;
-  }
-  
-  .ql-header[value="3"] span,
-  .ql-header[value="4"] span {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-  }
+  --color-accent: #d1d0c7;
+  --color-light: #fff;
+  --color-dark: #1d1d1d;
+  --color-primary: #000;
+  --color-secondary: #333;
+  --color-hover: rgba(0, 0, 0, 0.05);
+  --color-active: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
 
-  /* Sidebar */
-  .mobile-sidebar {
-    transition: 0.7s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .sidebar {
-    height: 100%;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 1.25rem;
-    padding-top: 0.5rem;
-    transition: 0.5s ease;
-  }
-  
-  .profile-img {
-    margin-top: 2rem;
-  }
-  
-  .links {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 10px;
-  }
-  
-  .btn {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 10px 10px 0px;
-    gap: 4px;
-    border-radius: 10px;
-    font-family: Poppins, "sans-serif";
-    font-weight: 400;
-    cursor: pointer;
-    transition: 0.3s ease;
-    color: rgba(255, 166, 0, 0.713);
-  }
-  
-  .btn p {
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: rgba(255, 166, 0, 0.713);
-    color: white !important;
-    font-weight: 600;
-    padding-left: 5px;
-  }
-  
-  .menu-btn {
-    transition: 0.3s ease;
-  }
-  
-  .menu-btn:hover {
-    background-color: rgba(255, 166, 0, 0.713);
-  }
+/* Sidebar - Desktop */
+.sidebar {
+  height: 100%;
+  background-color: var(--color-light);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.home-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-dark);
+  transition: transform var(--transition-speed) ease;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.profile-icon {
+  color: var(--color-light);
+  font-size: 1.75rem;
+}
+
+.profile-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  background-color: var(--color-hover);
+}
+
+.sidebar-link.active {
+  background-color: var(--color-active);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.logout-container {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #e53935;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.logout-button:hover {
+  background-color: rgba(229, 57, 53, 0.1);
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-light);
+  z-index: 1000;
+  transition: left var(--transition-speed) ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-sidebar.open {
+  left: 0;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.settings-button, 
+.mobile-header .home-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-dark);
+  transition: transform var(--transition-speed) ease;
+}
+
+.settings-button:hover, 
+.mobile-header .home-button:hover {
+  transform: scale(1.1);
+}
+
+.mobile-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+}
+
+.mobile-link:hover {
+  background-color: var(--color-hover);
+}
+
+.mobile-link.active {
+  background-color: var(--color-active);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.mobile-logout {
+  margin-top: auto;
+  padding-top: 1rem;
+}
   
   

@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import "../styles/Admin.css";
 import '../layout/Sidebar/Sidebar'
+import Transition from "../components/Transition";
 const AdminLayout = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const menuButtonRef = useRef(null)
@@ -33,4 +34,4 @@ const AdminLayout = () => {
   )
 }
 
-export default AdminLayout
+export default Transition(AdminLayout)
