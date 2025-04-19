@@ -13,6 +13,7 @@ import Leaderboard from "../pages/client/Leaderboard";
 import Profile from "../pages/client/Profile";
 import Quiz from "../pages/client/Quiz";
 import AdminCoursesPage from "../pages/admin/AdminCoursesPage";
+import StudentAuth from "../auth/StudentAuth";
 
 const RouterApp = () => {
   const location = useLocation();
@@ -43,6 +44,7 @@ const RouterApp = () => {
         </Route>
 
         <Route path="/teacher/auth" element={<TeacherAuth/>} />
+        <Route path="/student/auth" element={<StudentAuth/>} />
         <Route path="/teacher/dashboard" element={<AdminLayout />}>
           <Route index element={<AdminCoursesPage />} />
         </Route>

@@ -28,7 +28,7 @@ const Profile = () => {
     } else {
       // Initialize with default data if nothing exists
       const defaultData = {
-        name: 'User',
+        name: 'Rzayev Niyyat',
         level: 1,
         points: 0,
         streak: 0,
@@ -59,8 +59,17 @@ const Profile = () => {
     return Math.min(100, Math.round((progress / total) * 100));
   };
 
+  
+    useEffect(() => {
+      window.scroll({
+        top: 0,
+        behavior: 'auto'
+      });
+    }, []);
+  
+
   return (
-    <div className="page min-h-screen bg-gray-50 py-12 px-4 sm:px-6">
+    <div className="page min-h-screen bg-gray-50 pt-24 pb-12 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* User profile header */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-8">
@@ -76,7 +85,8 @@ const Profile = () => {
             
             <div className="flex-1 text-center sm:text-left">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                <h1 className="text-2xl font-bold text-gray-800">Welcome back!</h1>
+                <p className="text-2xl font-bold text-gray-800">{userData.name}</p>
+                <p className="text-2xl font-bold text-gray-800">Welcome back!</p>
                 <div className="flex items-center justify-center sm:justify-start">
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                     <FaCalendarAlt className="mr-1" /> {userData.streak} day streak
@@ -162,4 +172,6 @@ const Profile = () => {
   );
 };
 
-export default Transition(Profile);
+const TransitionedProfile = Transition(Profile);
+
+export default TransitionedProfile;

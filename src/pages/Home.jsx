@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis, { useLenis } from "lenis/react";
 import gsap from "gsap";
 import ParallaxImage from "../components/ParallaxImage/ParallaxImage";
-import StickyCards from "../components/Home/StickyCards";
+
 
 const Home = () => {
 
@@ -18,20 +18,15 @@ const Home = () => {
   const lenis = useLenis(({ scroll }) => {});
 
   useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: 'auto'
+    });
+  }, []);
+
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // ScrollTrigger.create({
-    //   trigger: ".mix-tape",
-    //   start: "top bottom",
-    //   end: "bottom bottom",
-    //   onUpdate: (self) => {
-    //     gsap.set(".strip", {
-    //       x: self.progress * 300,
-    //     });
-    //   },
-    // });
-
-    // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -44,13 +39,12 @@ const Home = () => {
       <Hero />
       <div className="page max-w-[1920px] overflow-hidden mx-auto">
         <AboutSection />
-        {/* <StickyCards /> */}
         <Courses />
         <ContactSection />
-        {/* <Footer /> */}
       </div>
     </ReactLenis>
   );
 };
 
-export default Transition(Home);
+const TransitionedHome = Transition(Home);
+export default TransitionedHome;

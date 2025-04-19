@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import webdevImg from '../../assets/illustrations/opy2.jpg';
 
 const Courses = () => {
   // Fake data array for courses/events
@@ -7,7 +8,7 @@ const Courses = () => {
     {
       id: 1,
       slug: "phyton",
-      image: '/events/python.jpg',
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
       title: 'Introduction to Python Programming',
       description: 'Learn the fundamentals of Python programming in this interactive course designed for beginners.',
       teacherName: 'Dr. Alan Smith',
@@ -17,7 +18,7 @@ const Courses = () => {
     {
       id: 2,
       slug: "data-science",
-      image: '/events/data-science.jpg',
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80",
       title: 'Data Science Fundamentals',
       description: 'Explore the world of data science through practical exercises and real-world applications.',
       teacherName: 'Prof. Sarah Johnson',
@@ -27,43 +28,43 @@ const Courses = () => {
     {
       id: 3,
       slug: "ai",
-      image: '/events/ai.jpg',
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
       title: 'Artificial Intelligence Basics',
       description: 'Understand the core concepts of AI and how its transforming industries today.',
       teacherName: 'Dr. Michael Chen',
       topic: 'Artificial Intelligence',
       progress: 90
     },
-    {
-      id: 4,
-      slug: "web-development",
-      image: '/events/web-dev.jpg',
-      title: 'Web Development Bootcamp',
-      description: 'A comprehensive course covering HTML, CSS, JavaScript and modern frameworks.',
-      teacherName: 'Jessica Williams',
-      topic: 'Web Development',
-      progress: 30
-    },
-    {
-      id: 5,
-      slug: "cybersecurity",
-      image: '/events/cybersecurity.jpg',
-      title: 'Cybersecurity Essentials',
-      description: 'Learn how to protect systems and networks from digital attacks in this hands-on course.',
-      teacherName: 'Robert Taylor',
-      topic: 'Cybersecurity',
-      progress: 60
-    },
-    {
-      id: 6,
-      slug: "blockchain",
-      image: '/events/blockchain.jpg',
-      title: 'Blockchain Technology',
-      description: 'Discover how blockchain works and its applications beyond cryptocurrency.',
-      teacherName: 'Emma Davis',
-      topic: 'Blockchain',
-      progress: 15
-    }
+    // {
+    //   id: 4,
+    //   slug: "web-development",
+    //   image: webdevImg,
+    //   title: 'Web Development Bootcamp',
+    //   description: 'A comprehensive course covering HTML, CSS, JavaScript and modern frameworks.',
+    //   teacherName: 'Jessica Williams',
+    //   topic: 'Web Development',
+    //   progress: 30
+    // },
+    // {
+    //   id: 5,
+    //   slug: "cybersecurity",
+    //   image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=400&q=80",
+    //   title: 'Cybersecurity Essentials',
+    //   description: 'Learn how to protect systems and networks from digital attacks in this hands-on course.',
+    //   teacherName: 'Robert Taylor',
+    //   topic: 'Cybersecurity',
+    //   progress: 60
+    // },
+    // {
+    //   id: 6,
+    //   slug: "blockchain",
+    //   image: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80",
+    //   title: 'Blockchain Technology',
+    //   description: 'Discover how blockchain works and its applications beyond cryptocurrency.',
+    //   teacherName: 'Emma Davis',
+    //   topic: 'Blockchain',
+    //   progress: 15
+    // }
   ];
 
   // Function to determine progress color based on completion percentage
@@ -203,10 +204,10 @@ const Courses = () => {
         
         <div className="text-center mt-16">
           <div className="inline-block group relative">
-            <button className="relative z-10 px-8 py-3 bg-white border border-primary-600 text-black uppercase font-medium transition-all duration-300 group-hover:px-10">
+            {/* <button className="relative z-10 px-8 py-3 bg-white border border-primary-600 text-black uppercase font-medium transition-all duration-300 group-hover:px-10">
               View All Courses
               <span className="absolute h-[2px] w-0 bg-primary-600 bottom-0 left-0 transition-all duration-300 group-hover:w-full"></span>
-            </button>
+            </button> */}
             <div className="absolute top-0 left-0 w-full h-full bg-primary-600 transform translate-x-2 translate-y-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
           </div>
         </div>

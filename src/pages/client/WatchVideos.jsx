@@ -76,6 +76,13 @@ const WatchVideosComponent = () => {
   const [userData, setUserData] = useState(null);
   const [filter, setFilter] = useState('all'); // 'all', 'unwatched', 'watched'
 
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: 'auto'
+    });
+  }, []);
+
   // Load user data and video watch status from localStorage
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
@@ -337,4 +344,6 @@ const WatchVideosComponent = () => {
   );
 };
 
-export default Transition(WatchVideosComponent);
+const TransitionedWatchVideos = Transition(WatchVideosComponent);
+
+export default TransitionedWatchVideos;

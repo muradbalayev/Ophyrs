@@ -24,9 +24,7 @@ const Footer = () => {
             </div>
             <nav className="flex flex-col space-y-3">
               <Link to="/" className="text-2xl font-medium hover:text-primary-600 transition-colors">Home</Link>
-              <Link to="/courses" className="text-2xl font-medium hover:text-primary-600 transition-colors">Courses</Link>
               <Link to="/about" className="text-2xl font-medium hover:text-primary-600 transition-colors">About</Link>
-              <Link to="/process" className="text-2xl font-medium hover:text-primary-600 transition-colors">Process</Link>
               <Link to="/contact" className="text-2xl font-medium hover:text-primary-600 transition-colors">Contact Us</Link>
             </nav>
             <div className="mt-8 space-y-2">
@@ -41,7 +39,7 @@ const Footer = () => {
               [ACKNOWLEDGEMENT]
             </div>
             <p className="text-sm mb-6">
-              We respectfully acknowledge the Turrbal people, the Traditional Owners and Custodians of the 
+              We respectfully acknowledge the people, the Traditional Owners and Custodians of the 
               Country on which we work. We pay our respects to Elders past and present, and acknowledge their 
               continuing connection to land, sea and community.
             </p>
@@ -50,7 +48,7 @@ const Footer = () => {
               [INFO]
             </div>
             <div className="space-y-1 text-sm">
-              <p><span className="font-medium">A:</span> 101 Days Rd, Grange QLD 4051</p>
+              <p><span className="font-medium">A:</span> Baku, Azerbaijan</p>
               <p><span className="font-medium">E:</span> info@ophyrs.com.au</p>
               <p><span className="font-medium">P:</span> 07 3110 1031</p>
               <p><span className="font-medium">H:</span> Monday to Friday, 8:30am - 5:00pm</p>
@@ -58,10 +56,10 @@ const Footer = () => {
 
             <div className="mt-8 flex items-center">
               <div className="w-16 h-16 bg-gray-100 flex items-center justify-center mr-2">
-                <span className="text-xs">LOGO</span>
+                <img src='/logo.jpg' className="w-full h-full object-contain"/>
               </div>
               <div className="text-xs text-gray-500">
-                MADE BY HUY & SID
+                MADE BY A4TB
               </div>
             </div>
           </div>

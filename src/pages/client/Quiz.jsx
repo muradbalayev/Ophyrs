@@ -150,8 +150,17 @@ function QuizComponent() {
   // Get current quiz
   const currentQuiz = currentQuizzes[currentQuizIndex];
 
+
+      useEffect(() => {
+        window.scroll({
+          top: 0,
+          behavior: 'auto'
+        });
+      }, []);
+    
+  
   return (
-    <div className="page min-h-screen bg-gray-50 py-12 px-4 sm:px-6">
+    <div className="page min-h-screen bg-gray-50 pt-24 pb-12 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="bg-blue-600 rounded-xl shadow-md p-6 mb-8 text-white">

@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Transition from "../components/Transition";
 import { Link } from "react-router-dom";
 import contactImg from "../assets/illustrations/Contact-us-bro.png";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "auto",
+    });
+  }, []);
+
   return (
     <div className="page max-w-[1920px] overflow-hidden mx-auto">
       {/* Hero Section */}
@@ -38,11 +45,9 @@ const Contact = () => {
                   <div>
                     <h4 className="text-lg font-semibold mb-2">Our Office</h4>
                     <p className="text-gray-600">
-                      123 Education Avenue
+                      Baku Congress Center
                       <br />
-                      Innovation District
-                      <br />
-                      San Francisco, CA 94103
+                      Baku, Azerbaijan 4051
                     </p>
                   </div>
 
@@ -119,7 +124,7 @@ const Contact = () => {
                       <input
                         type="text"
                         className="w-full border-b-2 border-gray-300 py-2 focus:border-primary-600 focus:outline-none transition-colors"
-                        placeholder="John Doe"
+                        placeholder="Murad Balazada"
                         required
                       />
                     </div>
@@ -130,7 +135,7 @@ const Contact = () => {
                       <input
                         type="email"
                         className="w-full border-b-2 border-gray-300 py-2 focus:border-primary-600 focus:outline-none transition-colors"
-                        placeholder="john@example.com"
+                        placeholder="@example.com"
                         required
                       />
                     </div>
@@ -323,5 +328,5 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Transition(Contact);
+const TransitionedContact = Transition(Contact);
+export default TransitionedContact;

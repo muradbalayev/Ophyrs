@@ -212,4 +212,5 @@ const TeacherAuth = () => {
   );
 };
 
-export default Transition(TeacherAuth);
+const TransitionedTeacherAuth = Transition(TeacherAuth);
+export default TransitionedTeacherAuth;

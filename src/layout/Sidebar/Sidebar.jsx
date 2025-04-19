@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { motion } from "framer-motion";
 import "./Sidebar.css";
@@ -18,7 +18,6 @@ import {
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, menuButtonRef }) => {
   const mobileSidebarRef = useRef(null);
   const navigate = useNavigate();
-  const [showSettings, setShowSettings] = useState(false);
 
   const handleClickOutside = useCallback(
     (event) => {
@@ -129,9 +128,6 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, menuButtonRef }) => {
         className={`mobile-sidebar ${isMobileOpen ? "open" : ""}`}
       >
         <div className="mobile-header">
-          <button className="settings-button" onClick={() => setShowSettings(true)}>
-            <Settings size={22} />
-          </button>
           <button title="Home" className="home-button" onClick={() => navigate("/")}>
             <Home size={22} />
           </button>

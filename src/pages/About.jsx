@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Transition from '../components/Transition'
 import { Link } from 'react-router-dom'
 import aboutImg from '../assets/illustrations/Exams-bro.png'
 import Button from '../components/common/Button'
 
 const About = () => {
+
+
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: 'auto'
+    });
+  }, []);
+
+
   return (
     <div className="page max-w-[1920px] overflow-hidden mx-auto">
       {/* Hero Section */}
@@ -221,4 +232,5 @@ const About = () => {
   )
 }
 
-export default Transition(About)
+const TransitionedAbout = Transition(About);
+export default TransitionedAbout;

@@ -3,9 +3,8 @@ import { AiOutlineEye, AiOutlineEdit, AiOutlineDelete, AiOutlineClose } from "re
 import { FaLinkedin } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { CircularProgress } from "@mui/material";
-import { useAddInstructorMutation, useDeleteInstructorMutation, useEditInstructorMutation } from "../../redux/services/InstructorApi";
+import { useAddInstructorMutation, useDeleteInstructorMutation } from "../../redux/services/InstructorApi";
 import AddCoursesModal from '../../components/admin/Courses/AddCoursesModal'
-import EditCoursesModal from '../../components/admin/Courses/EditCoursesModal'
 
 const AdminCoursesPage = () => {
 // const {data, isLoading, isError, error} = useGetInstructorsQuery()
@@ -73,13 +72,7 @@ const data = [
   return (
     <div className="wrapper relative flex flex-col items-center gap-5">
       {showAddModal && <AddCoursesModal setShowAddModal={setShowAddModal} />}
-      {currentItem && (
-          <EditCoursesModal
-            courseId={currentItem._id}
-            currentCourse={currentItem}
-            setShowEditModal={setCurrentItem}
-          />
-        )}
+
       <div className="flex justify-between items-center mb-8 w-full px-4">
         <h1 className="text-[32px] font-bold text-black">Courses</h1>
         <button
