@@ -16,7 +16,7 @@ useEffect(() => {
 
   // Find the course based on the slug
   useEffect(() => {
-    const foundCourse = coursesData.find(course => course.slug === slug);
+    const foundCourse = coursesData.find(course => coucrse.slug === slug);
     if (foundCourse) {
       setCourse(foundCourse);
       setTopics(foundCourse.topics);
