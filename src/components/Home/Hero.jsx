@@ -1,11 +1,11 @@
 import React from "react";
 import Button from "../common/Button";
 // import ParallaxImage from "../ParallaxImage/ParallaxImage";
-import hero from "../../assets/bg.webp";
+import hero from "../../assets/bg-min.jpg";
 import aze from '../../assets/illustrations/azeFlag.png'
 import turkisg from '../../assets/illustrations/turkishFlag.png'
 const Hero = () => {
-  
+
   const scrollToCourses = () => {
     const coursesSection = document.getElementById("courses");
     if (coursesSection) {
