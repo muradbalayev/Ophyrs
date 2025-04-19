@@ -18,22 +18,24 @@ const Home = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.create({
-      trigger: ".mix-tape",
-      start: "top bottom",
-      end: "bottom bottom",
-      onUpdate: (self) => {
-        gsap.set(".strip", {
-          x: self.progress * 300,
-        });
-      },
-    });
+    // ScrollTrigger.create({
+    //   trigger: ".mix-tape",
+    //   start: "top bottom",
+    //   end: "bottom bottom",
+    //   onUpdate: (self) => {
+    //     gsap.set(".strip", {
+    //       x: self.progress * 300,
+    //     });
+    //   },
+    // });
 
     // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+
+
 
   return (
     <ReactLenis root>

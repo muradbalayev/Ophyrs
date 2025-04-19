@@ -3,9 +3,9 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Menu.css";
 
 import gsap from "gsap";
+import { User } from "lucide-react";
 
 const Menu = ({ isOpen, setIsOpen, isDark }) => {
-  
   const [isAnimating, setIsAnimating] = useState(false);
   const menuColsRef = useRef([]);
   const menuOverlayRef = useRef(null);
@@ -19,7 +19,6 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
   const navigationTimeoutRef = useRef(null);
 
   const isHomePage = location.pathname === "/";
-
 
   useEffect(() => {
     if (navigationTimeoutRef.current) {
@@ -186,7 +185,9 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
       <div className="menu-bar p-4">
         <div className="">
           <Link
-            className={`px-4 py-2 rounded-full ${!isHomePage ? 'text-black' : 'text-white'}`}
+            className={`px-4 py-2 rounded-full ${
+              !isHomePage ? "text-black" : "text-white"
+            }`}
             to="/"
             onClick={handleNavigation("/")}
           >
@@ -194,8 +195,23 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
           </Link>
         </div>
 
-        <div onClick={handleMenuOpen} className="">
-          <p className={` px-4 py-2 rounded-full ${!isHomePage ? 'text-white bg-black' : 'text-black bg-white'}`}>Menu</p>
+        <div  className="flex gap-2 items-center">
+          <Link to="/profile" className={`p-3 rounded-full overflow-hidden cursor-pointer ${
+            !isHomePage ? " bg-black" : " bg-white"
+          }`}>
+            <User size={28} className={` ${
+              !isHomePage ? "text-white" : "text-black"
+            }`}
+            />
+          </Link>
+          <p
+            onClick={handleMenuOpen}
+            className={` px-4 py-2 rounded-full ${
+              !isHomePage ? "text-white bg-black" : "text-black bg-white"
+            }`}
+          >
+            Menu
+          </p>
         </div>
       </div>
 

@@ -2,6 +2,15 @@ import React from "react";
 import Button from "../common/Button";
 // import ParallaxImage from "../ParallaxImage/ParallaxImage";
 const Hero = () => {
+
+  const scrollToCourses = () => {
+    const coursesSection = document.getElementById("courses");
+    if (coursesSection) {
+      coursesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  
   return (
     <section 
       className="hero w-full h-screen mx-auto flex items-center justify-center relative overflow-hidden"
@@ -21,7 +30,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl mb-8 ">
           With Ophyrs, teachers organize interactive lessons, and students benefit from this unique experience. Learn physics, biology, and literature in a new and exciting way.          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button text="View Courses" href="/" />
+            <Button text="View Courses" onClick={scrollToCourses} />
             <Button text="Join as Teacher" href="/teacher/auth" />
           </div>
         </div>

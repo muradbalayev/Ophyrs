@@ -74,7 +74,7 @@ const Events = () => {
   };
 
   return (
-    <section className="py-24 max-w-[1920px] overflow-hidden mx-auto">
+    <section id="courses" className="py-24 max-w-[1920px] overflow-hidden mx-auto">
       <div className="container mx-auto px-4">
         {/* Header with decorative elements */}
         <div className="relative mb-16">

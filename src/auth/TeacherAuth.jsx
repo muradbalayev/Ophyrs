@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Transition from "../components/Transition";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { supabase } from "../supabase-client";
 
 const TeacherAuth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -24,30 +25,58 @@ const TeacherAuth = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isLogin) {
-      console.log("Login with:", {
-        email: formData.email,
-        password: formData.password,
-      });
-      navigate("/teacher/dashboard");
 
-      // Implement login logic here
+    const { email, password, fullName } = formData;
+
+    if (isLogin) {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        alert("Login failed: " + error.message);
+        return;
+      }
+
+      if (!data.session?.user.email_confirmed_at) {
+        alert("Please verify your email before logging in.");
+        return;
+      }
+
+      console.log("Login success:", data);
+      navigate("/teacher/dashboard");
     } else {
-      if (formData.password !== formData.repeatPassword) {
+      if (password !== formData.repeatPassword) {
         alert("Passwords don't match!");
         return;
       }
-      console.log("Register with:", formData);
-      // Implement registration logic here
+
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            fullName,
+          },
+        },
+      });
+
+      if (error) {
+        alert("Signup failed: " + error.message);
+        return;
+      }
+
+      alert("Check your email to verify your account.");
+      setIsLogin(true);
     }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg relative overflow-hidden">
-        {/* Decorative elements */}
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-100 rounded-full opacity-50 blur-3xl"></div>
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-100 rounded-full opacity-50 blur-3xl"></div>
 
@@ -71,14 +100,10 @@ const TeacherAuth = () => {
             <div className="space-y-4">
               {!isLogin && (
                 <div>
-                  <label
-                    htmlFor="fullName"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label className="block text-sm font-medium text-gray-700">
                     Full Name
                   </label>
                   <input
-                    id="fullName"
                     name="fullName"
                     type="text"
                     required
@@ -91,14 +116,10 @@ const TeacherAuth = () => {
               )}
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label className="block text-sm font-medium text-gray-700">
                   Email Address
                 </label>
                 <input
-                  id="email"
                   name="email"
                   type="email"
                   autoComplete="email"
@@ -111,15 +132,11 @@ const TeacherAuth = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <div className="relative">
                   <input
-                    id="password"
                     name="password"
                     type={showPassword ? "text" : "password"}
                     autoComplete={isLogin ? "current-password" : "new-password"}
@@ -141,17 +158,12 @@ const TeacherAuth = () => {
 
               {!isLogin && (
                 <div>
-                  <label
-                    htmlFor="repeatPassword"
-                    className="block text-sm font-medium text-gray-700"
-                  >
+                  <label className="block text-sm font-medium text-gray-700">
                     Repeat Password
                   </label>
                   <input
-                    id="repeatPassword"
                     name="repeatPassword"
                     type="password"
-                    autoComplete="new-password"
                     required
                     value={formData.repeatPassword}
                     onChange={handleChange}
@@ -178,14 +190,6 @@ const TeacherAuth = () => {
                     Remember me
                   </label>
                 </div>
-
-                {/* {isLogin && (
-                  <div className="text-sm">
-                    <a href="#" className="font-medium text-primary-600 hover:text-primary-500">
-                      Forgot your password?
-                    </a>
-                  </div>
-                )} */}
               </div>
             </div>
 
@@ -202,19 +206,6 @@ const TeacherAuth = () => {
               </div>
             </div>
           </form>
-
-          {/* <div className="mt-8 text-center">
-            <p className="text-sm text-gray-600">
-              By {isLogin ? "signing in" : "signing up"}, you agree to our{" "}
-              <a href="#" className="font-medium text-primary-600 hover:text-primary-500">
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a href="#" className="font-medium text-primary-600 hover:text-primary-500">
-                Privacy Policy
-              </a>
-            </p>
-          </div> */}
         </div>
       </div>
     </div>

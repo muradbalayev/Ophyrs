@@ -9,6 +9,10 @@ import AdminLayout from "../layout/AdminLayout";
 import AdminInstructorsPage from "../pages/admin/AdminInstructorsPage";
 import TeacherAuth from "../auth/TeacherAuth";
 import Course from "../pages/client/Course";
+import WatchVideos from "../pages/client/WatchVideos";
+import Leaderboard from "../pages/client/Leaderboard";
+import Profile from "../pages/client/Profile";
+import Quiz from "../pages/client/Quiz";
 
 const RouterApp = () => {
   const location = useLocation();
@@ -31,7 +35,11 @@ const RouterApp = () => {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="course/:slug" element={<Course/>} />
+          <Route path="/course/:slug" element={<Course/>} />
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/watch-videos" element={<WatchVideos/>}/>
+          <Route path="/leaderboard" element={<Leaderboard/>}/>
+          <Route path="/quiz" element={<Quiz/>}/>
         </Route>
 
         <Route path="/teacher/auth" element={<TeacherAuth/>} />
