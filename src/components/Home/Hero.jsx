@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "../common/Button";
 // import ParallaxImage from "../ParallaxImage/ParallaxImage";
+import hero from "../../assets/bg.webp";
+import aze from '../../assets/illustrations/azeFlag.png'
+import turkisg from '../../assets/illustrations/turkishFlag.png'
 const Hero = () => {
-
+  
   const scrollToCourses = () => {
     const coursesSection = document.getElementById("courses");
     if (coursesSection) {
@@ -10,18 +13,23 @@ const Hero = () => {
     }
   };
 
-  
+
   return (
     <section 
       className="hero w-full h-screen mx-auto flex items-center justify-center relative overflow-hidden"
       style={{
-        backgroundImage: "url('/home/bg.jpg')",
+        backgroundImage: `url('${hero}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat"
       }}
     >
-      
+      <div className="absolute bottom-4 left-4 ">
+        <div className="flag w-20 flex gap-4">
+          <img src={aze} className="w-full h-full object-cover" alt="Azerbaijan Flag" />
+          <img src={turkisg} className="w-full h-full object-cover" alt="Turkish Flag" />
+        </div>
+      </div>
       <div className="container mx-auto px-4 z-10 text-center">
         <div className="max-w-4xl mx-auto bg-white px-8 py-12 rounded-4xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-4  font-semibold">

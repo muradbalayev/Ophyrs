@@ -44,34 +44,34 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, menuButtonRef }) => {
   const SIDEBARITEMS = [
     {
       id: 1,
-      title: "Dashboard",
+      title: "Courses",
       icon: <Layout size={20} />,
       path: "/teacher/dashboard",
     },
-    {
-      id: 2,
-      title: "Courses",
-      icon: <BookOpen size={20} />,
-      path: "/teacher/dashboard/courses",
-    },
-    {
-      id: 3,
-      title: "Students",
-      icon: <Users size={20} />,
-      path: "/teacher/dashboard/students",
-    },
-    {
-      id: 4,
-      title: "Analytics",
-      icon: <BarChart2 size={20} />,
-      path: "/teacher/dashboard/analytics",
-    },
-    {
-      id: 5,
-      title: "Materials",
-      icon: <FileEdit size={20} />,
-      path: "/teacher/dashboard/materials",
-    },
+    // {
+    //   id: 2,
+    //   title: "Courses",
+    //   icon: <BookOpen size={20} />,
+    //   path: "/teacher/dashboard/courses",
+    // },
+    // {
+    //   id: 3,
+    //   title: "Students",
+    //   icon: <Users size={20} />,
+    //   path: "/teacher/dashboard/students",
+    // },
+    // {
+    //   id: 4,
+    //   title: "Analytics",
+    //   icon: <BarChart2 size={20} />,
+    //   path: "/teacher/dashboard/analytics",
+    // },
+    // {
+    //   id: 5,
+    //   title: "Materials",
+    //   icon: <FileEdit size={20} />,
+    //   path: "/teacher/dashboard/materials",
+    // },
   ];
 
   return (

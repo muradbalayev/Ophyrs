@@ -41,6 +41,9 @@ img {
   object-fit: cover;
 }
 
+label{
+  color: black
+}
 
 
 p.primary {

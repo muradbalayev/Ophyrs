@@ -4,6 +4,7 @@ import "./Menu.css";
 
 import gsap from "gsap";
 import { User } from "lucide-react";
+import Button from "../../components/common/Button";
 
 const Menu = ({ isOpen, setIsOpen, isDark }) => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -191,7 +192,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
             to="/"
             onClick={handleNavigation("/")}
           >
-            A4TB
+            OPHYRS 
           </Link>
         </div>
 
@@ -254,6 +255,10 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
                   Contact
                 </Link>
               </p>
+            </div>
+            <div className="pt-5">
+
+            <Button text="Dashboard" href="/teacher/auth" />
             </div>
           </div>
 

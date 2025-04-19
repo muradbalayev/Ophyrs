@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTrophy, FaVideo, FaBook, FaCheck, FaCalendarAlt } from 'react-icons/fa';
@@ -65,7 +66,7 @@ const Profile = () => {
         <div className="bg-white rounded-xl shadow-md p-6 mb-8">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <div className="w-24 h-24 relative">
-              <div className="w-full h-full rounded-full bg-primary-600 flex items-center justify-center text-white text-2xl font-bold">
+              <div className="w-full h-full bg-black rounded-full bg-primary-600 flex items-center justify-center text-white text-2xl font-bold">
                 {userData.name.charAt(0)}
               </div>
               <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">

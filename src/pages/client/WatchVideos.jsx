@@ -168,7 +168,7 @@ const WatchVideosComponent = () => {
   const totalVideos = videos.length;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6">
+    <div className="page min-h-screen bg-gray-50 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="bg-purple-600 rounded-xl shadow-md p-6 mb-8 text-white">

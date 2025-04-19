@@ -16,7 +16,7 @@ useEffect(() => {
 
   // Find the course based on the slug
   useEffect(() => {
-    const foundCourse = coursesData.find(course => coucrse.slug === slug);
+    const foundCourse = coursesData.find(course => course.slug === slug);
     if (foundCourse) {
       setCourse(foundCourse);
       setTopics(foundCourse.topics);
@@ -139,24 +139,24 @@ useEffect(() => {
                   
                   {/* Navigation buttons */}
                   <div className="flex justify-between mt-8">
-                    <button 
-                      className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors"
-                      onClick={() => {
-                        const prevTopic = topics.find(topic => topic.id === currentTopicId - 1);
-                        if (prevTopic) setCurrentTopicId(prevTopic.id);
-                      }}
-                      disabled={currentTopicId === 1}
-                    >
-                      Previous
-                    </button>
-                    
-                    <button 
-                      className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                      onClick={handleNextTopic}
-                    >
-                      {currentTopicId === topics.length ? 'Finish Course' : 'Mark as Complete & Continue'}
-                    </button>
-                  </div>
+  {currentTopicId !== 1 && (
+    <button 
+      className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors"
+      onClick={() => {
+        const prevTopic = topics.find(topic => topic.id === currentTopicId - 1);
+        if (prevTopic) setCurrentTopicId(prevTopic.id);
+      }}
+    >
+      Previous
+    </button>
+  )}
+  <button 
+    className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+    onClick={handleNextTopic}
+  >
+    {currentTopicId === topics.length ? 'Finish Course' : 'Mark as Complete & Continue'}
+  </button>
+</div>
                 </div>
               )}
             </div>

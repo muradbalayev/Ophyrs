@@ -6,13 +6,13 @@ import About from "../pages/About";
 import { AnimatePresence } from "framer-motion";
 import Contact from "../pages/Contact";
 import AdminLayout from "../layout/AdminLayout";
-import AdminInstructorsPage from "../pages/admin/AdminInstructorsPage";
 import TeacherAuth from "../auth/TeacherAuth";
 import Course from "../pages/client/Course";
 import WatchVideos from "../pages/client/WatchVideos";
 import Leaderboard from "../pages/client/Leaderboard";
 import Profile from "../pages/client/Profile";
 import Quiz from "../pages/client/Quiz";
+import AdminCoursesPage from "../pages/admin/AdminCoursesPage";
 
 const RouterApp = () => {
   const location = useLocation();
@@ -44,7 +44,7 @@ const RouterApp = () => {
 
         <Route path="/teacher/auth" element={<TeacherAuth/>} />
         <Route path="/teacher/dashboard" element={<AdminLayout />}>
-          <Route index element={<AdminInstructorsPage />} />
+          <Route index element={<AdminCoursesPage />} />
         </Route>
       </Routes>
     </AnimatePresence>
