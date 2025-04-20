@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaUser } from "react-icons/fa6";
+import { FaCertificate, FaUser } from "react-icons/fa6";
 import React, { useCallback, useEffect, useRef } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { motion } from "framer-motion";
@@ -47,18 +47,12 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, menuButtonRef }) => {
       icon: <Layout size={20} />,
       path: "/teacher/dashboard",
     },
-    // {
-    //   id: 2,
-    //   title: "Courses",
-    //   icon: <BookOpen size={20} />,
-    //   path: "/teacher/dashboard/courses",
-    // },
-    // {
-    //   id: 3,
-    //   title: "Students",
-    //   icon: <Users size={20} />,
-    //   path: "/teacher/dashboard/students",
-    // },
+    {
+      id: 2,
+      title: "Certificates",
+      icon: <FaCertificate size={20} />,
+      path: "/teacher/dashboard/certificates",
+    },
     // {
     //   id: 4,
     //   title: "Analytics",

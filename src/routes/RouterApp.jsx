@@ -14,6 +14,7 @@ import Profile from "../pages/client/Profile";
 import Quiz from "../pages/client/Quiz";
 import AdminCoursesPage from "../pages/admin/AdminCoursesPage";
 import StudentAuth from "../auth/StudentAuth";
+import AdminCertificatePage from "../pages/admin/AdminCertificatePage";
 
 const RouterApp = () => {
   const location = useLocation();
@@ -36,17 +37,19 @@ const RouterApp = () => {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/course/:slug" element={<Course/>} />
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/watch-videos" element={<WatchVideos/>}/>
-          <Route path="/leaderboard" element={<Leaderboard/>}/>
-          <Route path="/quiz" element={<Quiz/>}/>
+          <Route path="/course/:slug" element={<Course />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/watch-videos" element={<WatchVideos />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Route>
 
-        <Route path="/teacher/auth" element={<TeacherAuth/>} />
-        <Route path="/student/auth" element={<StudentAuth/>} />
+        <Route path="/teacher/auth" element={<TeacherAuth />} />
+        <Route path="/student/auth" element={<StudentAuth />} />
         <Route path="/teacher/dashboard" element={<AdminLayout />}>
           <Route index element={<AdminCoursesPage />} />
+
+          <Route path="certificates" element={<AdminCertificatePage />} />
         </Route>
       </Routes>
     </AnimatePresence>

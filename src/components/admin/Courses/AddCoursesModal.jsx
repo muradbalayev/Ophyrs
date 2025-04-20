@@ -78,8 +78,8 @@ export default function AddCoursesModal({ onClose, onCreated }) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
       <div className="bg-white p-6 rounded-lg w-full max-w-md relative">
-        <X className="absolute top-4 right-4 cursor-pointer" onClick={onClose} />
-        <h2 className="text-2xl font-bold mb-4">Add New Course</h2>
+        <X className="absolute top-4 right-4 cursor-pointer" color='black' onClick={onClose} />
+        <h2 className="text-2xl font-bold mb-4 text-black">Add New Course</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-black">Slug</label>

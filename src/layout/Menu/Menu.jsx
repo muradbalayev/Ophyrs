@@ -5,7 +5,8 @@ import "./Menu.css";
 import gsap from "gsap";
 import { User } from "lucide-react";
 import Button from "../../components/common/Button";
-import menuImg from '../../assets/menu-img.jpg'
+import menuImg from "../../assets/menu-img.jpg";
+
 
 const Menu = ({ isOpen, setIsOpen, isDark }) => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -193,17 +194,20 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
             to="/"
             onClick={handleNavigation("/")}
           >
-            OPHYRS 
+            OPHYRS
           </Link>
         </div>
 
-        <div  className="flex gap-2 items-center">
-          <Link to="/profile" className={`p-3 rounded-full overflow-hidden cursor-pointer ${
-            !isHomePage ? " bg-black" : " bg-white"
-          }`}>
-            <User size={28} className={` ${
-              !isHomePage ? "text-white" : "text-black"
+        <div className="flex gap-2 items-center">
+          <Link
+            to="/profile"
+            className={`p-3 rounded-full overflow-hidden cursor-pointer ${
+              !isHomePage ? " bg-black" : " bg-white"
             }`}
+          >
+            <User
+              size={28}
+              className={` ${!isHomePage ? "text-white" : "text-black"}`}
             />
           </Link>
           <p
@@ -222,9 +226,6 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
           <div className="menu-bg" ref={menuBgRef}>
             <img src={menuImg} alt="Menu Background" />
           </div>
-          {/* <div className="menu-pattern" ref={menuPatternRef}>
-            <img src="/menu/menu-pattern.png" alt="" />
-          </div> */}
         </div>
         <div className="menu-col" ref={addToRefs}>
           <div
@@ -258,8 +259,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
               </p>
             </div>
             <div className="pt-5">
-
-            <Button text="Dashboard" href="/teacher/auth" />
+              <Button text="Dashboard" href="/teacher/auth" />
             </div>
           </div>
 
